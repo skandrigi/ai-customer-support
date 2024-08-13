@@ -10,12 +10,12 @@ export async function POST(req) {
     const completion = await openai.completions.create({
         messages : [
             {
-                role = 'system', content = systemprompt,
-            }
+                role: 'system', content: systemprompt,
+            },
             ...data,
         ],
-        model = 'gpt-4o-mini',
-        stream = true,
+        model: 'gpt-4o-mini',
+        stream: true,
     })
 
     const stream = new ReadableStream({
